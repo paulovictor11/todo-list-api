@@ -10,12 +10,12 @@ router.post(
     taskMiddleware.validateFieldTitle,
     taskController.createTask
 );
-router.put("/tasks/:id", taskController.updateTask);
-router.delete(
+router.put(
     "/tasks/:id",
     taskMiddleware.validateFieldTitle,
     taskMiddleware.validateFieldStatus,
-    taskController.deleteTask
+    taskController.updateTask
 );
+router.delete("/tasks/:id", taskController.deleteTask);
 
 module.exports = router;
